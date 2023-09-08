@@ -112,10 +112,11 @@ header {
 
     .nav_items{
         flex-direction: column;
-        font-size:medium;
+        font-size: small;
         position: fixed;
         padding: 1rem;
         align-items: start;
+        gap: 0;
         right: -150%;
         border-radius: 10px;
         top: 15%;
