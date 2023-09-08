@@ -6,13 +6,25 @@
 }
 
 :root {
-    --header-height: 8rem;
+    --header-height: 6.23rem;
     --font: 'Noto Sans', sans-serif;
     --primary-color: #ffe6a7;
     --secondary-color: #bb9457;
     --card-color: #6f1d1b;
     --card-color2: #99582a;
     --dark-color: #432818;
+}
+
+#particles-js {
+    position: absolute;
+    width: 100vw;
+    height: 100vh;
+    z-index: 0;
+}
+
+.body {
+    position: relative;
+    z-index: 1;
 }
 
 body {
@@ -36,8 +48,8 @@ a {
 .button {
     justify-content: center;
     align-items: center;
-    width: calc(var(--header-height)*1.2);
-    height: calc(var(--header-height)*0.48);
+    width: calc(var(--header-height)*1.5);
+    height: calc(var(--header-height)*0.6);
     background-color: var(--dark-color);
     border-radius: 50px;
     color: var(--primary-color);
@@ -119,7 +131,7 @@ header {
         gap: 10px;
         right: -150%;
         border-radius: 10px;
-        top: 15%;
+        top: 11%;
         background-color: var(--card-color2);
         transition: all 0.8s ease-in-out;
         z-index: 100;

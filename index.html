@@ -7,29 +7,46 @@
     <link rel="stylesheet" href="./assets/styles/styles.css">
 </head>
 <body>
-    <!--Header-->
-    <header>
-        <div class="header_container flex">
-            <div class="logo">
-                <img class="logo_image" src="./assets/images/logo.png" alt="logo">
+    <div>
+        <!--background for entire screen-->
+    <div id="particles-js">
+    </div>
+<!--background for entire screen end /-->
+
+    <div class="body">
+        <!--Header-->
+        <header>
+            <div class="header_container flex">
+                <div class="logo">
+                    <img class="logo_image" src="./assets/images/logo.png" alt="logo">
+                </div>
+                <nav class="nav_list">
+                    <ul class="nav_items flex">
+                        <li><a class="list_item"  href="">home</a></li>
+                        <li><a class="list_item"  href="">about</a></li>
+                        <li><a class="list_item"  href="">skills</a></li>
+                        <li><a class="list_item" href="">project</a></li>
+                        <li><a class="list_item button flex" href="">contact</a></li>
+                    </ul>
+                </nav>
+                <div class="icon">
+                    <input type="checkbox" role="button" aria-label="Display the menu" class="menu">
+                </div>
             </div>
-            <nav class="nav_list">
-                <ul class="nav_items flex">
-                    <li><a class="list_item"  href="">home</a></li>
-                    <li><a class="list_item"  href="">about</a></li>
-                    <li><a class="list_item"  href="">skills</a></li>
-                    <li><a class="list_item" href="">project</a></li>
-                    <li><a class="list_item button flex" href="">contact me</a></li>
-                </ul>
-            </nav>
-            <div class="icon">
-                <input type="checkbox" role="button" aria-label="Display the menu" class="menu">
-            </div>
-        </div>
-    </header>
-    <!--Header end /-->
-</div>
+        </header>
+        <!--Header end /-->
+    </div>
+    </div>
+    
 
 <script src="./assets/js/script.js"></script>
+<!-- Import Particles.js and app.js files -->
+<script src=
+        "/node_modules/particles.js/particles.js">
+    </script>
+    <script src=
+        "/node_modules/particles.js/demo/js/app.js">
+    </script>
+</script>
 </body>
 </html>
