@@ -1,0 +1,196 @@
+@import url('https://fonts.googleapis.com/css2?family=Noto+Sans&display=swap');
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
+
+:root {
+    --header-height: 8rem;
+    --font: 'Noto Sans', sans-serif;
+    --primary-color: #ffe6a7;
+    --secondary-color: #bb9457;
+    --card-color: #6f1d1b;
+    --card-color2: #99582a;
+    --dark-color: #432818;
+}
+
+body {
+    font-family: var(--font);
+    background-color: var(--primary-color);
+}
+
+li {
+    list-style: none;
+}
+
+a {
+    color: black;
+    all: unset;
+}
+
+.flex {
+    display: flex;
+}
+
+.button {
+    justify-content: center;
+    align-items: center;
+    width: calc(var(--header-height)*1.2);
+    height: calc(var(--header-height)*0.48);
+    background-color: var(--dark-color);
+    border-radius: 50px;
+    color: var(--primary-color);
+}
+
+
+/* Header */
+
+header {
+    width: 100%;
+    max-height: var(--header-height);
+    padding: 1.25rem;
+}
+
+.header_container {
+    width: 100%;
+    height: 100%;
+    background-color: var(--secondary-color);
+    justify-content: space-between;
+    align-items: center;
+    border-radius: 100px;
+    box-shadow: rgba(0, 0, 0, 0.15) 0px 15px 25px, rgba(0, 0, 0, 0.05) 0px 5px 10px;
+
+}
+
+.logo {
+    width: var(--header-height);
+    height: var(--header-height);
+}
+
+.logo_image {
+    max-width: 100%;
+    max-height: 100%;
+}
+
+.nav_items {
+    gap: 2rem;
+    padding: 0.5rem 2rem;
+    align-items: center;
+    color: var(--dark-color);
+}
+
+.list_item {
+    cursor: pointer;
+    text-transform: capitalize;
+    font-size: larger;
+    font-weight: bold;
+}
+
+.list_item:hover {
+    color: var(--card-color2);
+}
+
+.button:hover {
+    background-color: var(--card-color);
+    color: var(--primary-color);
+}
+
+.icon {
+    display: none;
+}
+
+@media only screen and (max-width:900px) {
+
+    header {
+        height: calc(var(--header-height) * 0.85);
+    }
+
+    .logo {
+        height: inherit;
+    }
+
+    .nav_items{
+        flex-direction: column;
+        font-size:medium;
+        position: fixed;
+        padding: 1rem;
+        align-items: start;
+        right: -150%;
+        border-radius: 10px;
+        top: 15%;
+        background-color: var(--card-color2);
+        transition: all 0.8s ease-in-out;
+        z-index: 100;
+    }
+
+    .icon {
+        display: inline-block;
+        padding: 20px;
+    }
+
+    .menu {
+        --s: 1rem; /* control the size */
+        --c: var(--dark-color); /* the color */
+        height: var(--s);
+        aspect-ratio: 1;
+        border: none;
+        padding: 0;
+        border-inline: calc(var(--s)/2) solid #0000; 
+        box-sizing: content-box;
+        --_g1: linear-gradient(var(--c) 20%,#0000 0 80%,var(--c) 0) 
+               no-repeat content-box border-box;
+        --_g2: radial-gradient(circle closest-side at 50% 12.5%,var(--c) 95%,#0000) 
+               repeat-y content-box border-box;
+        background: 
+          var(--_g2) left  var(--_p,0px) top,
+          var(--_g1) left  calc(var(--s)/10 + var(--_p,0px)) top,
+          var(--_g2) right var(--_p,0px) top,
+          var(--_g1) right calc(var(--s)/10 + var(--_p,0px)) top;
+        background-size: 
+          20% 80%,
+          40% 100%;
+        position: relative;
+        clip-path: inset(0 25%);
+        -webkit-mask: linear-gradient(90deg,#0000,#000 25% 75%,#0000);
+        cursor: pointer;
+        transition: 
+          background-position .3s var(--_s,.3s), 
+          clip-path 0s var(--_s,.6s);
+        -webkit-appearance:none;
+        -moz-appearance:none;
+        appearance:none;
+      }
+      .menu:before,
+      .menu:after {
+        content:"";
+        position: absolute;
+        border-radius: var(--s);
+        inset: 40% 0;
+        background: var(--c);
+        transition: transform .3s calc(.3s - var(--_s,.3s));
+      }
+      
+      .menu:checked {
+        clip-path: inset(0);
+        --_p: calc(-1*var(--s));
+        --_s: 0s;
+      }
+      .menu:checked:before {
+        transform: rotate(45deg);
+      }
+      .menu:checked:after {
+        transform: rotate(-45deg);
+      }
+      .menu:focus-visible {
+        clip-path: none;
+        -webkit-mask: none;
+        border: none;
+        outline: 2px solid var(--c);
+        outline-offset: 5px;
+      }
+
+      .menuActive{
+        right: 1.25rem;
+      }
+}
